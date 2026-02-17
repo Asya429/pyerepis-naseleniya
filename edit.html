@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Редактировать запись - Перепись населения</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header__content">
+                <div class="header__logo">
+                    <div class="header__emblem">&#9733;</div>
+                    <h1 class="header__title">Перепись населения</h1>
+                </div>
+                <p class="header__subtitle">Редактирование записи</p>
+            </div>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="container">
+            <nav class="breadcrumb">
+                <a href="index.html">Главная</a> / <span>Редактирование записи</span>
+            </nav>
+
+            <form id="citizenForm" class="form">
+                <input type="hidden" id="citizenId" name="id">
+                
+                <fieldset class="form__section">
+                    <legend>Личные данные</legend>
+                    
+                    <div class="form__row">
+                        <div class="form__group">
+                            <label for="lastName" class="form__label">Фамилия *</label>
+                            <input type="text" id="lastName" name="lastName" class="input" required>
+                        </div>
+                        <div class="form__group">
+                            <label for="firstName" class="form__label">Имя *</label>
+                            <input type="text" id="firstName" name="firstName" class="input" required>
+                        </div>
+                        <div class="form__group">
+                            <label for="middleName" class="form__label">Отчество</label>
+                            <input type="text" id="middleName" name="middleName" class="input">
+                        </div>
+                    </div>
+
+                    <div class="form__row">
+                        <div class="form__group">
+                            <label for="birthDate" class="form__label">Дата рождения *</label>
+                            <input type="date" id="birthDate" name="birthDate" class="input" required>
+                        </div>
+                        <div class="form__group">
+                            <label for="gender" class="form__label">Пол *</label>
+                            <select id="gender" name="gender" class="input" required>
+                                <option value="">Выберите...</option>
+                                <option value="male">Мужской</option>
+                                <option value="female">Женский</option>
+                            </select>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <fieldset class="form__section">
+                    <legend>Адрес проживания</legend>
+                    
+                    <div class="form__row">
+                        <div class="form__group">
+                            <label for="region" class="form__label">Регион *</label>
+                            <input type="text" id="region" name="region" class="input" required>
+                        </div>
+                        <div class="form__group">
+                            <label for="city" class="form__label">Город / Населённый пункт *</label>
+                            <input type="text" id="city" name="city" class="input" required>
+                        </div>
+                    </div>
+
+                    <div class="form__row">
+                        <div class="form__group form__group--wide">
+                            <label for="street" class="form__label">Улица *</label>
+                            <input type="text" id="street" name="street" class="input" required>
+                        </div>
+                        <div class="form__group form__group--small">
+                            <label for="house" class="form__label">Дом *</label>
+                            <input type="text" id="house" name="house" class="input" required>
+                        </div>
+                        <div class="form__group form__group--small">
+                            <label for="apartment" class="form__label">Квартира</label>
+                            <input type="text" id="apartment" name="apartment" class="input">
+                        </div>
+                    </div>
+                </fieldset>
+
+                <fieldset class="form__section">
+                    <legend>Дополнительная информация</legend>
+                    
+                    <div class="form__row">
+                        <div class="form__group">
+                            <label for="education" class="form__label">Образование *</label>
+                            <select id="education" name="education" class="input" required>
+                                <option value="">Выберите...</option>
+                                <option value="primary">Начальное</option>
+                                <option value="secondary">Среднее</option>
+                                <option value="vocational">Среднее специальное</option>
+                                <option value="higher">Высшее</option>
+                            </select>
+                        </div>
+                        <div class="form__group">
+                            <label for="employment" class="form__label">Занятость *</label>
+                            <select id="employment" name="employment" class="input" required>
+                                <option value="">Выберите...</option>
+                                <option value="employed">Работаю</option>
+                                <option value="student">Учусь</option>
+                                <option value="retired">Пенсионер</option>
+                                <option value="unemployed">Безработный</option>
+                                <option value="other">Другое</option>
+                            </select>
+                        </div>
+                        <div class="form__group">
+                            <label for="maritalStatus" class="form__label">Семейное положение *</label>
+                            <select id="maritalStatus" name="maritalStatus" class="input" required>
+                                <option value="">Выберите...</option>
+                                <option value="single">Холост / Не замужем</option>
+                                <option value="married">Женат / Замужем</option>
+                                <option value="divorced">В разводе</option>
+                                <option value="widowed">Вдовец / Вдова</option>
+                            </select>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <div class="form__actions">
+                    <button type="submit" class="btn btn--primary">Сохранить изменения</button>
+                    <a href="index.html" class="btn btn--outline">Отмена</a>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Перепись населения. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <script src="js/storage.js"></script>
+    <script src="js/edit.js"></script>
+</body>
+</html>
